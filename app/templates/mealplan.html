@@ -7,21 +7,24 @@
 
 {% block content %}
 
-<div class= "meal" style="float:right;margin-left:50%;color: white;background-color: rgb(88, 53, 29);border-radius: 30px;">
-    <h4 style= "text-align: center;"><u>Her is a custom meal plan just for you</u></h4>
-    <p class="mealplan " style="font-weight: bolder; font-size:10pt;;"> 
+<div class= "meal" style="margin:5%;color: white;background-color: rgb(88, 53, 29);border-radius: 30px;">
+    <h4 style= "text-align: center;"><u>Here is a custom meal plan just for you</u></h4>
+    <p class="mealplan " style="font-weight: bolder; font-size:10pt;text-align: center;"> 
         {{mealplan.title}}
       </p>
       <hr />
       <div class="mealplan">
-        <p class="custom">
-         ~ {{mealplan.readyInMinutes}} ~
+        <p class="custom" style="text-align: center;">
+            {{mealplan.id}} 
+          </p>
+        <p class="custom" style="text-align: center;">
+          {{mealplan.readyInMinutes}} 
         </p>
-        <p class="custom">
-            ~ {{mealplan.servings}} ~
+        <p class="custom" style="text-align: center;">
+             {{mealplan.servings}} 
            </p>
-           <p class="custom">
-            ~ {{mealplan.sourceUrl}} ~
+           <p class="custom" style="text-align: center;">
+             {{mealplan.sourceUrl}} 
            </p>
     </div>
 {% endblock %}  

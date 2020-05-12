@@ -1,4 +1,4 @@
-import urllib.request,json
+import requests
 from .models import  MealPlan
 # Getting api key
 api_key = "6f8461162ff54814bf4501e258fa7a48"
@@ -11,5 +11,5 @@ def get_mealplan():
     """
     response = requests.get(url).json()
 
-    meal_result = MealPlan(response.get("title"),response.get("readyInMinutes"),response.get("servings"),response.get("sourceUrl"))
+    meal_result = MealPlan(response.get("id"),response.get("title"),response.get("readyInMinutes"),response.get("servings"),response.get("sourceUrl"))
     return meal_result
