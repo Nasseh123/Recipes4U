@@ -8,10 +8,14 @@
             <hr>
             {%for recipe in recipes%}
             <ul>
+                {{ recipe.id}}
                 {{ recipe.title}}
+                {{ recipe.image}}
+                <a href="/recipe/information/{{recipe.id}}">FIND OUT MORE</a>
             </ul>
             {%endfor%}
         </div>
+        .
 
     </div>
 {% endblock %}

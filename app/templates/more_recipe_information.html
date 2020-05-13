@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <h3> MORE ON THE RECIPE!! </h3>
+            <hr>
+            
+            {%for more in moreinfo%}
+            <ul>
+                {{more}}
+            </ul>
+            {%endfor%}
+        </div>
+        .
+
+    </div>
+{% endblock %}

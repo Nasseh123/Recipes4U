@@ -1,6 +1,6 @@
-from flask import render_template,request,redirect,url_for
+from flask import render_template,request,redirect,url_for,flash
 from . import main
-from ..requests import get_search_by_ingredients
+from ..requests import get_search_by_ingredients,get_recipe_information
 
 @main.route('/')
 def index():
@@ -14,6 +14,7 @@ def index():
     if search_by_ingredients:
         return redirect(url_for('.search_by_ingredients',ingredient_name=search_by_ingredients))
     else:
+        # flash('OOPS!Sorry No recipe matched with your inputed ingredients')
         return render_template('index.html',title=title)
 
 @main.route('/search/<ingredient_name>')
@@ -26,3 +27,11 @@ def search_by_ingredients(ingredient_name):
     
     searched_recipes=get_search_by_ingredients(ingredient_name)
     return render_template('search.html',recipes=searched_recipes)
+
+@main.route('/recipe/information/<id>')
+def get_information(id):
+    """
+    """
+
+    moreinfo=get_recipe_information(id)
+    return render_template ('more_recipe_information.html',moreinfo=moreinfo)
