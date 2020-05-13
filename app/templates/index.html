@@ -1,4 +1,9 @@
 {%extends 'base.html'%}
+{% import 'macros.html' as macros %}
 {%block content%}
 <H1 style="text-align: center;">HOMEPAGE</H1>
+<form>
+    <input type="text" name="general_query" placeholder="Search for a recipe" class="form-control">
+    <input type="submit" value="Submit" class="btn btn-default">
+</form> 
 {%endblock%}
