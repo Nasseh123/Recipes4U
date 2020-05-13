@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <h3> Found {{ recipes| count }} matches </h3>
+            <hr>
+            {%for recipe in recipes%}
+            <ul>
+                {{ recipe.title}}
+            </ul>
+            {%endfor%}
+        </div>
+
+    </div>
+{% endblock %}

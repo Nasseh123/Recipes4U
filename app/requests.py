@@ -26,8 +26,11 @@ def get_search_by_ingredients(ingredients):
 
     # results=
     # print([obj.get('id') for obj in get_search_by_ingredients_response])
+    # id=[obj.get('id') for obj in get_search_by_ingredients_response]
+    
     # for recipe in get_search_by_ingredients_response:
     #     id =recipe.get("id",'default value')
-    #     print(recipe)
+    #     title=recipe.get("title",)
+        # print(recipe)
 
     return get_search_by_ingredients_response
