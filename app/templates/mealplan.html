@@ -6,29 +6,43 @@
 {% endblock %}
 
 {% block content %}
-  {%for mealplan in mealplan%}
-
+<div style="background-color: rgb(204, 201, 201);">
+<h4 style= "text-align: center;"><strong><u>CUSTOM MEAL PLAN <br><br>JUST FOR YOU</u></strong></h4>
+  {%for meal in mealplan.meals%}
 <div class= "meal" style="margin:5%;color: white;background-color: rgb(88, 53, 29);border-radius: 30px;">
-    <h4 style= "text-align: center;"><u>Here is a custom meal plan just for you</u></h4>
+    
     <p class="mealplan " style="font-weight: bolder; font-size:10pt;text-align: center;"> 
-         {{mealplan.title}}
+         {{ meal.title }}
       </p>
-      <hr />
       <div class="mealplan">
         <p class="custom" style="text-align: center;">
-            {{mealplan.id}} 
+            {{meal.id}} 
           </p>
         <p class="custom" style="text-align: center;">
-          {{mealplan.readyInMinutes}} 
+          {{meal.readyInMinutes}} 
         </p>
         <p class="custom" style="text-align: center;">
-             {{mealplan.servings}} 
+             {{meal.servings}} 
            </p>
            <p class="custom" style="text-align: center;">
-             {{mealplan.sourceUrl}} 
+             <a href= {{meal.sourceUrl}} >View</a>
            </p>
     </div>
     {%endfor%}
-    
-{% endblock %}  
+    <br>
+    <br>
+    <br>
+    <div class="jokes">
+      <hr>
+      <p style="text-align: center;color:greenyellow">{{joke.text}}</p>
+      <hr>
+    </div>
+    </div>
+    <footer>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="/" style="color:black;"> Groupname</a>
+    </div>
+    </footer>
+    {% endblock %}
+
 </div>

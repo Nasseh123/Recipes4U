@@ -1,3 +1,3 @@
 export SECRET_KEY='RECIPE'
-export API_KEY='6f8461162ff54814bf4501e258fa7a48'
+export API_KEY='e7ba7ecc9faf4e32a68df8753b188959'
 python3.7 manage.py server
