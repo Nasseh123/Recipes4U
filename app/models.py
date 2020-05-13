@@ -11,3 +11,12 @@ class MealPlan:
         self.readyInMinutes = readyInMinutes
         self.servings = servings
         self.sourceUrl = sourceUrl
+
+class Joke:
+
+    """
+    Adds joke class derived from Api
+    """
+
+    def __init__(self,text):
+        self.text = text

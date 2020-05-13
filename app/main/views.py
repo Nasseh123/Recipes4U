@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from . import main
 from ..models import MealPlan
 from ..requests import get_mealplan
@@ -14,5 +14,5 @@ def index():
 @main.route('/mealplan', methods = ['GET','POST'])
 
 def mealplan():
-    mealplan = get_mealplan()
+    mealplan = get_mealplan("day")
     return render_template('mealplan.html', title= "Mealplans", mealplan= mealplan)
