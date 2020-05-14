@@ -1,0 +1,31 @@
+
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+
+<div class="row">
+
+<h3> Found {{ recipes.results| count }} matches </h3>
+<hr>
+{%for recipe in recipes.results%}
+
+ 
+<ul>
+    <div class="container">
+        <div class="card-body">
+            <p>{{ recipe.title }}</p>
+            <a href="{{ recipe.sourceUrl }}">
+                <button class="btn btn-info">Read More</button>
+            </a>
+            <img src="https://spoonacular.com/recipeImages/{{recipe.image }}"width="500" length="200" alt="">
+                 
+        </div>
+    </div>
+
+<!-- {{ recipe.sourceUrl }} -->
+</ul>
+{%endfor%}
+</div>
+
+</div>
+{% endblock %} 
