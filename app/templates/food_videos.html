@@ -1,1 +1,23 @@
+{%extends 'base.html'%}
+{%block content%}
+<H1 style="text-align: center;">Search Here:</H1>
 
+<form>
+    <input type="text" name="video_query" placeholder="Search here:" class="form-control">
+<input type="submit"  value="Submit" class="btn btn-default"><br><br><br><br>
+</form>
+
+{% for one in videos.videos %}
+<div class="card">
+    <h3 class="card-title">{{one.shortTitle}}</h3>
+    <div class="card-body">
+        <h4>{{one.title}}</h4>
+        <img src="{{one.thumbnail}}" alt="">
+        <a href="https://www.youtube.com/watch?v={{one.youTubeId}}">Watch Video</a>
+    </div>
+    <div class="card-footer">
+        <p><strong>{{one.views}} views</strong></p>
+    </div>
+</div>
+{% endfor %}
+{%endblock%}
