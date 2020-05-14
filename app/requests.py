@@ -22,14 +22,9 @@ def search_food_videos(food):
     fetch = requests.get(search_food_videos_url)
     get_food_videos = fetch.json()
 
-    # for video in get_food_videos:
-    #     shortTitle = video.get('views')
-    #     print(shortTitle)
 
      
 
     return get_food_videos
-    # print([obj.get('views') for obj in get_food_videos])
+    
 
-
-# def get_random_recipe()
