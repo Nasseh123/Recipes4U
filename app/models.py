@@ -1,9 +1,21 @@
 class FoodVideos:
-    def __init__(self,shortTitle,title,youTubeId, views)
-    self.shortTitle = shortTitle
-    self.title = title
-    self.youTubeId = youTubeId
-    self.views = views
+    def __init__(self,shortTitle,title,youTubeId, views):
+        self.shortTitle = shortTitle
+        self.title = title
+        self.youTubeId = youTubeId
+        self.views = views
+class Recipe:
+    '''
+    Recipe class to define recipe objects
+    '''
+
+    def __init__(self,id,title,readyInMinutes,servings,sourceUrl,image):
+        self.id = id
+        self.title= title
+        self.readyInMinutes = readyInMinutes
+        self.servings = servings
+        self.sourceUrl = sourceUrl
+        self.image = image
 
 class MealPlan:
 

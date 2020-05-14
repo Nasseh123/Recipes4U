@@ -1,0 +1,5 @@
+{% macro dispayRecipe(recipes_list) %}
+     {% for recipe in recipes_list %}
+       <p>{{recipe.title}}</p>
+      {% endfor %}  
+{% endmacro %}      
