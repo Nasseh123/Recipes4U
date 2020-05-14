@@ -28,3 +28,12 @@ def search_food_videos(food):
     return get_food_videos
     
 
+def get_random_videos:
+
+    random_food_videos_url = 'https://api.spoonacular.com/recipes/random?number=1&tags=vegetarian,dessert&apiKey=b3e0e6046d7b44848276665bf840228f'
+
+    fetch = requests.get(random_food_videos_url)
+    get_random_videos = fetch.json()
+
+    return get_random_videos
+

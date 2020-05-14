@@ -1,7 +1,7 @@
 from flask import render_template, request
 from . import main
 
-from ..requests import search_food_videos
+from ..requests import search_food_videos, get_random_videos
 
 @main.route('/food/videos/search')
 def search_food_video():
@@ -12,3 +12,5 @@ def search_food_video():
     videos = search_food_videos(search_videos)
     
     return render_template('food_videos.html',videos=videos)
+
+
