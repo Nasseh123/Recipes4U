@@ -1,3 +1,4 @@
+
 class MealPlan:
 
     """
@@ -20,3 +21,13 @@ class Joke:
 
     def __init__(self,text):
         self.text = text
+        
+class SearchIngredients:
+    """
+    """
+
+    def __init__(self,id,title,image):
+        self.id=id
+        self.title=title
+        self.image=image
+
