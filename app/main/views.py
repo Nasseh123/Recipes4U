@@ -5,11 +5,28 @@ from . import main
 from ..models import MealPlan
 from ..requests import get_search_by_ingredients,get_recipe_information,get_mealplan,get_joke,get_search_by_recipe
 
+from ..requests import search_food_videos, get_random_videos
+
+@main.route('/food/videos/search')
+def search_food_video():
+    """
+    """
+
+    search_videos = request.args.get('video_query')
+    videos = search_food_videos(search_videos)
+    
+    return render_template('food_videos.html',videos=videos)
+
+
+@main.route('/recipes/random')
+def random_videos():
+
+    recipes = get_random_videos()
+
+    return render_template('random_recipes.html',recipes=recipes)
+
 @main.route('/')
 def index():
-    """
-    """
-    # search = get_search_by_recipe('chicken')
     title="RECIPE4U"
     search_by_recipe=request.args.get('general_query')
     search_by_ingredients=request.args.get('ingredient_query')
@@ -63,3 +80,4 @@ def mealplan():
     joke = get_joke()
     return render_template('mealplan.html', title= "Mealplans", mealplan= mealplan,joke=joke)
     
+

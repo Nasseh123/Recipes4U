@@ -4,6 +4,16 @@ import requests
 
 
 # Getting api key
+api_key= "e7ba7ecc9faf4e32a68df8753b188959"
+base_url = None    
+FOOD_VIDEOS_URL=None
+SEARCH_MEALPLAN_URL = 'https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey=e7ba7ecc9faf4e32a68df8753b188959&includeNutrition=false'
+JOKE_URL = "https://api.spoonacular.com/food/jokes/random?apiKey=e7ba7ecc9faf4e32a68df8753b188959"
+SEARCH_RECIPES_BY_INGREDIENTS_url=None
+GET_RECIPE_INFORMATION_url=None
+
+def configure_request(app):
+    global SEARCH_RECIPES_BY_INGREDIENTS_url,api_key,GET_RECIPE_INFORMATION_url,SEARCH_MEALPLAN_URL,JOKE_URL,FOOD_VIDEOS_URL, my_api_key
 api_key= None
 base_url = 'https://api.spoonacular.com/recipes/search?query={}&apiKey=e7ba7ecc9faf4e32a68df8753b188959'    
 
@@ -22,6 +32,8 @@ def configure_request(app):
     GET_RECIPE_INFORMATION_url=app.config['GET_RECIPE_INFORMATION']
     SEARCH_MEALPLAN_URL=app.config['SEARCH_MEALPLAN']
     JOKE_URL=app.config['JOKE_URL']
+    my_api_key=app.config['MY_API_KEY']
+    FOOD_VIDEOS_URL=app.config['FOOD_VIDEOS_URL']
     
 def get_search_by_recipe(recipe):
      """
@@ -117,3 +129,15 @@ def get_joke():
     return random_joke
 
 
+def search_food_videos(food):
+    # search_food_videos_url = FOOD_VIDEOS_URL.format(food, my_api_key)
+    search_food_videos_url = f'https://api.spoonacular.com/food/videos/search?query={food}&number=10&apiKey=b3e0e6046d7b44848276665bf840228f'
+    fetch = requests.get(search_food_videos_url)
+    get_food_videos = fetch.json()
+    return get_food_videos
+    
+def get_random_videos():
+    random_food_videos_url = 'https://api.spoonacular.com/recipes/random?number=10&tags=vegetarian,dessert&apiKey=b3e0e6046d7b44848276665bf840228f'
+    fetch = requests.get(random_food_videos_url)
+    get_random_videos = fetch.json()
+    return get_random_videos
