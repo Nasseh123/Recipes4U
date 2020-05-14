@@ -1,19 +1,34 @@
 {%extends 'base.html'%}
 {% block content %}
-    <div class="container">
+<div class="container">
+    <div class="row">
+        <h3> MORE ON THE RECIPE!! </h3>
+        <hr>
+        {%for more in moreinfo%}
+        <ul>
+            {{more}}
+        </ul>
+        {%endfor%}
+        {%for steps in moreinfo.analyzedInstructions%}
+        <h4
+            style="font-size: medium;text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <B> <U>STEPS FOR RECIPE</U></B></h2>
+            {%for step in steps.steps%}
 
-        <div class="row">
-
-            <h3> MORE ON THE RECIPE!! </h3>
-            <hr>
-            
-            {%for more in moreinfo%}
-            <ul>
-                {{more}}
-            </ul>
-            {%endfor%}
-        </div>
-        .
-
+            <p>{{step.number}} .-{{step.step}}</p>
+            <!-- INGREDIENTS IN STEPS -->
+            <h4> <U>INGREDIENT FOR THIS STEP</U></h2>
+                {%for ingredient in step.ingredients%}
+                {%if ingredient%}
+                <p>{{ingredient.name}}</p>
+                {%else%}
+                <p>no ingredient</p>
+                {%endif%}
+                {%endfor%}
+                {%endfor%}
+                {%endfor%}
     </div>
+
+
+</div>
 {% endblock %}
