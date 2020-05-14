@@ -1,4 +1,17 @@
 {%extends 'base.html'%}
 {%block content%}
 <H1 style="text-align: center;">HOMEPAGE</H1>
+<form>
+    <input type="text" name="ingredient_query" placeholder="Search for a recipe by ingredients eg: chicken,onions" class="form-control">
+    <input type="submit"  value="Submit" class="btn btn-default">
+</form>
+<ul>
+    {%for ingredient in ingredients%}
+    <p>{{ingredient.id}}</p>
+    <li>{{ingredient.title}}</li>
+    {{ingredient.image}}
+    <img src="{{ingredient.image}}" alt="">
+    {%endfor%}
+
+</ul>
 {%endblock%}
