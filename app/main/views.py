@@ -1,11 +1,14 @@
-from flask import render_template
+from flask import render_template, request
 from . import main
 
-@main.route('/')
-def index():
+from ..requests import search_food_videos
+
+@main.route('/food/videos/search')
+def search_food_video():
     """
     """
 
-    title="RECIPE4U"
+    search_videos = request.args.get('video_query')
+    videos = search_food_videos(search_videos)
     
-    return render_template('index.html',title=title)
+    return render_template('food_videos.html',videos=videos)

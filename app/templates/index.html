@@ -1,4 +1,17 @@
 {%extends 'base.html'%}
 {%block content%}
 <H1 style="text-align: center;">HOMEPAGE</H1>
+
+{% for one in videos.videos %}
+<div class="card">
+    <h3 class="card-title">{{one.shortTitle}}</h3>
+    <div class="card-body">
+        <h4>{{one.title}}</h4>
+        <a href='https://www.youtube.com/results?search_query={{one.youTubeId}}&page=&utm_source=opensearch'>Watch video</a>
+    </div>
+    <div class="card-footer">
+        <p>{{one.views}} views</p>
+    </div>
+</div>
+{% endfor %}
 {%endblock%}
