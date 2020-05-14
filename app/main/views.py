@@ -25,4 +25,4 @@ def search_by_recipe(recipe_name):
     
     searched_recipes=get_search_by_recipe(recipe_name)
     
-    return render_template('search.html',recipes=searched_recipes) 
+    return render_template('searches.html',recipes=searched_recipes) 
