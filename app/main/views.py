@@ -14,3 +14,9 @@ def search_food_video():
     return render_template('food_videos.html',videos=videos)
 
 
+@main.route('/recipes/random')
+def random_videos():
+
+    recipes = get_random_videos()
+
+    return render_template('random_recipes.html',recipes=recipes)
