@@ -1,16 +1,27 @@
 {%extends 'base.html'%}
 {%block content%}
-<H1 style="text-align: center;">HOMEPAGE</H1>
-
+<h1 style="text-align: center;">10 AMAZING RECIPES JUST FOR YOU</h1>
+<br>
+<br>
+<br>
 {% for one in recipes.recipes %}
+<div class="col-md-4">
 
-<div class="card">
-    <h3 class="card-title">{{one.title}}</h3>
-    <div class="card-body">
-        <img src="{{one.image}}" alt="">
-        <a href="{{one.sourceUrl }}">Get your Recipe Here</a>
-        <p>Preparation Time is {{one.readyInMinutes}}minutes.</p>
+    <div class="card" style= "background-color: rgb(201, 197, 197);padding:10px;">
+        <h3 class="card-title">{{one.title}}</h3>
+        <div class="card-body">
+
+            <img src="{{one.image}}" style="width: 100%; border-radius: 45px;" alt="">
+            <hr>
+            <h4 class="card-title"><a style="color: rgb(151, 22, 22)" href="{{one.sourceUrl }}">Get your recipe here</a></h4>
+            <p class="text-right">Preparation time : {{one.readyInMinutes}}minutes </p>
+        </div>
+
     </div>
+    <hr>
 </div>
+
 {% endfor %}
 {%endblock%}
+
+

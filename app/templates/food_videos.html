@@ -1,23 +1,31 @@
 {%extends 'base.html'%}
 {%block content%}
+<div style="background-size: cover;background-image: url(https://image.freepik.com/free-photo/top-view-of-bowl-with-lentils-and-variety-of-condiments_1220-423.jpg);background-repeat: no-repeat;">
 <H1 style="text-align: center;">Search Here:</H1>
 
 <form>
-    <input type="text" name="video_query" placeholder="Search here:" class="form-control">
-<input type="submit"  value="Submit" class="btn btn-default"><br><br><br><br>
+    <input type="text" name="video_query" placeholder="Enter your fav food.." class="form-control" style= "border-radius: 35px;width:25%">
+<input type="submit"  value="Submit" class="btn btn-default" style="border-radius:34px;margin-left:10%"><br><br><br><br>
 </form>
 
 {% for one in videos.videos %}
-<div class="card">
-    <h3 class="card-title">{{one.shortTitle}}</h3>
-    <div class="card-body">
-        <h4>{{one.title}}</h4>
-        <img src="{{one.thumbnail}}" alt="">
-        <a href="https://www.youtube.com/watch?v={{one.youTubeId}}">Watch Video</a>
+
+<div class="col-md-4">
+
+    <div class="card" style= "background-color: rgb(201, 197, 197);padding:10px;">
+        <h3 class="card-title" style="text-align: center;"><u>{{one.shortTitle}}</u></h3>
+        <div class="card-body">
+            <img src="{{one.thumbnail}}" style="width: 100%; border-radius: 45px;" alt="">
+            <hr>
+            <h4 class="card-title"><a style="color: rgb(151, 22, 22)" href="https://www.youtube.com/watch?v={{one.youTubeId}}">Watch video</a></h4>
+            <p class="text-right"><strong>{{one.views}} views </strong></p>
+        </div>
+
     </div>
-    <div class="card-footer">
-        <p><strong>{{one.views}} views</p>
-    </div>
+    <hr>
 </div>
 {% endfor %}
+</div>
 {%endblock%}
+
+

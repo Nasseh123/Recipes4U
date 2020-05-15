@@ -12,8 +12,8 @@ class Config:
     RECIPE_API_BASE_URL ='https://api.spoonacular.com/recipes/search?query={}&apiKey={}'
     
 
-    SEARCH_MEALPLAN = 'https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey=e7ba7ecc9faf4e32a68df8753b188959&includeNutrition=false'
-    JOKE_URL = "https://api.spoonacular.com/food/jokes/random?apiKey=e7ba7ecc9faf4e32a68df8753b188959"
+    SEARCH_MEALPLAN = 'https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey={}&includeNutrition=false'
+    JOKE_URL = "https://api.spoonacular.com/food/jokes/random?apiKey={}"
     SEARCH_RECIPES_BY_INGREDIENTS='https://api.spoonacular.com/recipes/findByIngredients?ingredients={}&number=50&apiKey={}&includeNutrition=false'
     GET_RECIPE_INFORMATION='https://api.spoonacular.com/recipes/{}/information?apiKey={}&includeNutrition=false'
 

@@ -6,10 +6,11 @@
 {% endblock %}
 
 {% block content %}
-<div style="background-color: rgb(204, 201, 201);">
-<h4 style= "text-align: center;"><strong><u>CUSTOM MEAL PLAN <br><br>JUST FOR YOU</u></strong></h4>
+<div style="border-top-left-radius: 40px;border-top-right-radius: 40px;  background-image: url(http://www.food-photography.ie/wp-content/uploads/2015/12/food-and-life-style-photography-by-Anna-Nowakowska-Dublin.jpg);background-size: cover;">
+  <br>
+<h4 style= "text-align: center;color: white"><strong><u>CUSTOM MEAL PLAN <br><br>JUST FOR YOU</u></strong></h4>
   {%for meal in mealplan.meals%}
-<div class= "meal" style="margin-left: 10%;margin-right:10%;margin-top:4%;color: white;background-color: rgb(88, 53, 29);border-radius: 30px;padding-top: 25px;">
+<div class= "meal" style="margin-left: 10%;margin-right:10%;margin-top:4%;color: black;background-color: gray; border-radius: 30px;padding-top: 25px;">
     
     <p class="mealplan " style="font-weight: bolder; font-size:10pt;text-align: center;"> 
         <u> {{ meal.title }} </u>
@@ -31,13 +32,13 @@
     <br>
     <div class="jokes">
       <hr>
-      <p style="text-align: center;color:greenyellow">{{joke.text}}</p>
+      <p style="text-align: center;color:greenyellow;font-size:18pt">{{joke.text}}</p>
       <hr>
     </div>
     </div>
     <footer>
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="/" style="color:black;"> Groupname</a>
+      <a href="/" style="color:black;"> Recipes4U</a>
     </div>
     </footer>
     {% endblock %}

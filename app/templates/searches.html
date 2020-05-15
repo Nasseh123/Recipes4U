@@ -2,30 +2,32 @@
 {%extends 'base.html'%}
 {% block content %}
 <div class="container">
-
+    <h3 style="font-size:30px;"> Yeeyyyy....We found {{ recipes.results| count }} matches...enjoy</h3>
 <div class="row">
 
-<h3> Found {{ recipes.results| count }} matches </h3>
+
 <hr>
 {%for recipe in recipes.results%}
+<div class="col-md-4">
 
- 
-<ul>
-    <div class="container">
+    <div class="card" style= "background-color: rgb(201, 197, 197);padding:10px;">
+        <h3 class="card-title" style="text-align: center;"><u>{{recipe.title}}</u></h3>
         <div class="card-body">
-            <p>{{ recipe.title }}</p>
-            <a href="{{ recipe.sourceUrl }}">
-                <button class="btn btn-info">Read More</button>
-            </a>
-            <img src="https://spoonacular.com/recipeImages/{{recipe.image }}"width="500" length="200" alt="">
-                 
+            <img src="https://spoonacular.com/recipeImages/{{recipe.image }}" style="width: 100%; border-radius: 45px;" alt="">
+            <hr>
+            <h4 class="card-title"><a style="color: rgb(28, 53, 107)" href="{{ recipe.sourceUrl }}">More info</a></h4>
+            <p class="text-right"><strong> With love </strong></p>
         </div>
-    </div>
 
-<!-- {{ recipe.sourceUrl }} -->
-</ul>
+    </div>
+    <hr>
+</div>
+ 
+
 {%endfor%}
 </div>
 
 </div>
 {% endblock %} 
+
+
