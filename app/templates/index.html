@@ -1,16 +1,37 @@
 {%extends 'base.html'%}
 {% import 'macros.html' as macros %}
 {%block content%}
-<H1 style="text-align: center;">HOMEPAGE</H1>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-image: url(https://image.freepik.com/free-photo/top-view-of-bowl-with-lentils-and-variety-of-condiments_1220-423.jpg);
+                                 background-repeat: no-repeat;
+                                 background-size: cover">
+      <div class="text-white text-center py-5 px-4 my-5">
+          <div>
+              <h2 class="card-title h1-responsive pt-3 mb-5 font-bolder" style="font-size: 40pt"><strong>Welcome to RECIPES4U</strong></h2>
+              <p class="mx-5 mb-5">We provide you with unlimited recipes to suit your every culinary need </p>
+              <hr>
+              <form href="/recipe">
+                <input type="text" name="general_query" style= "border-radius: 35px;width:25%" placeholder="Search for a recipe" class="form-control">
+                <input type="submit" value="Submit" style="border-radius:34px;float:left" class="btn btn-primary py-2 px-4">
+            </form> 
+            <br>
+            <br>
+            <br>
+            <form>
+                <input type="text" name="ingredient_query" style= "border-radius: 35px;width:25%" placeholder="Search for a recipe by ingredients eg: chicken,onions" class="form-control">
+                <input type="submit"  style="border-radius:34px;float: left;" value="Submit" class="btn btn-primary py-2 px-4">
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+              <p><a href="#" style="font-size: 14pt;margin-right:40px" class="btn btn-primary py-2 px-4">PREMIUM ACCOUNT</a> <a href="#" style="font-size: 14pt;margin-left: 40px" class="btn btn-white btn-outline-white py-2 px-4">GET RECIPES VIA EMAIL</a></p>
+          </div>
+      </div>
+  </div>
 
-<form>
-    <input type="text" name="general_query" placeholder="Search for a recipe" class="form-control">
-    <input type="submit" value="Submit" class="btn btn-default">
-</form> 
-<form>
-    <input type="text" name="ingredient_query" placeholder="Search for a recipe by ingredients eg: chicken,onions" class="form-control">
-    <input type="submit"  value="Submit" class="btn btn-default">
-</form>
+
 <ul>
     {%for ingredient in ingredients%}
     <p>{{ingredient.id}}</p>
@@ -21,3 +42,5 @@
 
 </ul>
 {%endblock%}
+
+
